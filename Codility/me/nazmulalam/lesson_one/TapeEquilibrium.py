@@ -14,8 +14,8 @@ class TapeEquilibrium:
         lowest = 0
         leftSum = 0
         rightSum = 0
-        for x in range(1, len(A)):
-            leftSum = leftSum + self.leftsum(x, A)
+        for x in range(1, len(A)-1):
+            leftSum += self.leftsum(x, A)
             rightSum = self.rightsum(x, A)
             #print leftSum, rightSum 
             #print x
@@ -29,29 +29,22 @@ class TapeEquilibrium:
     def leftsum(self, p, A):
         total = 0
         for p in range(p-1, p):
-            total = total + abs(A[p])
+            total += A[p]
         return total
     
     def rightsum(self, p, A):
         total = 0
         for p in range(p, len(A)):
-            total = total + abs(A[p])
+            total += A[p]
         return total
     
     def efficient(self, A):
         leftsum = A[0]
         rightsum = sum(A[x] for x in range(1, len(A)))
         min_dif = abs(leftsum - rightsum)
-        for x in range(1, len(A)):
-            leftsum = leftsum + A[x]
-            rightsum = rightsum - A[x]
+        for x in range(1, len(A)-1):
+            leftsum += A[x]
+            rightsum -= A[x]
             if abs(leftsum - rightsum) < min_dif:
                 min_dif = abs(leftsum - rightsum)
         return min_dif
-
-obj = TapeEquilibrium()
-A = [3, 1, 2, 4, 3]
-B = [-1000, 1000]
-C = [-5, -1, -2, -4, -3]
-
-print obj.efficient(B)

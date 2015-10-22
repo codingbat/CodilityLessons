@@ -20,15 +20,15 @@ class Test(unittest.TestCase):
     def testName(self):
         pass
 
-
-if __name__ == "__main__":
-    #import sys;sys.argv = ['', 'Test.testName']
-    unittest.main()
-    
     def testEfficient(self):
         obj = TapeEquilibrium()
         A = [3, 1, 2, 4, 3]
         exp_result = 1
         result = obj.efficient(A)
-        self.assertEquals("Tape equilibrium", exp_result, result)
+        self.assertEquals(result, exp_result)
+
+if __name__ == "__main__":
+    #import sys;sys.argv = ['', 'Test.testName']
+    unittest.main()
+    
         
