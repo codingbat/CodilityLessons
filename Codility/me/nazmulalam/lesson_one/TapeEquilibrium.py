@@ -12,10 +12,10 @@ class TapeEquilibrium:
     
     def solution(self, A):
         lowest = 0
-        leftSum = 0
+        leftSum = A[0]
         rightSum = 0
         for x in range(1, len(A)-1):
-            leftSum += self.leftsum(x, A)
+            leftSum += A[x]
             rightSum = self.rightsum(x, A)
             #print leftSum, rightSum 
             #print x
@@ -25,12 +25,6 @@ class TapeEquilibrium:
                 lowest = abs(leftSum - rightSum)
             
         return lowest
-    
-    def leftsum(self, p, A):
-        total = 0
-        for p in range(p-1, p):
-            total += A[p]
-        return total
     
     def rightsum(self, p, A):
         total = 0
