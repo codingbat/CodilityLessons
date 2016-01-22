@@ -1,8 +1,5 @@
-// you can also use imports, for example:
-// import java.util.*;
-
-// you can write to stdout for debugging purposes, e.g.
-// System.out.println("this is a debug message");
+import java.util.List;
+import java.util.ArrayList;
 
 class BinaryGap {
     public int solution(int N) {
@@ -14,12 +11,22 @@ class BinaryGap {
             N = N/2;
         }
         
-        System.out.print(binary);
+        //System.out.print(binary);
+        // int longestGap = 0;
+        // for (int i = 0; i < binary.size()-1; i++)
+        // {
+        //     int gap = 0;
+        //     while (i+1 != 1) {
+        //         gap++;
+        //         i++;
+        //     }
+            
+        //     if(gap>longestGap && binary.get(i-1)==1)
+        //         longestGap=gap;
+        // }
         
-        for (int i = 0; i < binary.length(); i++) {
-            if 
-        }
         
-        return 0;
+        
+        return longestGap;
     }
 }
